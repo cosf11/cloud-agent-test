@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About &amp; Status · Task Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>About &amp; Status</h1>
+        <p class="app__subtitle">What this app is, and how it is doing right now</p>
+        <nav class="app__nav" aria-label="Primary">
+          <a class="app__nav-link" href="./index.html">Board</a>
+          <a class="app__nav-link app__nav-link--active" href="./about.html" aria-current="page">About</a>
+        </nav>
+      </header>
+
+      <section class="about">
+        <h2 class="about__heading">About</h2>
+        <p class="about__text">
+          Task Board is a tiny full-stack demo used to validate the Cloud Agent development
+          environment. An Express server serves this static frontend and a small JSON API, while
+          tasks live in an in-memory store that resets whenever the server restarts.
+        </p>
+        <p class="about__text">
+          Head to the <a href="./index.html">Board</a> to add tasks, tick them off, and clear the
+          completed ones.
+        </p>
+
+        <h2 class="about__heading">Live status</h2>
+        <dl class="status" aria-live="polite">
+          <div class="status__row">
+            <dt class="status__label">Health</dt>
+            <dd id="status-value" class="status__value">Loading…</dd>
+          </div>
+          <div class="status__row">
+            <dt class="status__label">Uptime</dt>
+            <dd id="uptime-value" class="status__value">Loading…</dd>
+          </div>
+          <div class="status__row">
+            <dt class="status__label">Tasks</dt>
+            <dd id="task-count" class="status__value">Loading…</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <script src="./about.js" type="module"></script>
+  </body>
+</html>
